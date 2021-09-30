@@ -1,4 +1,6 @@
 <h1 class="text-center mb-5" style="margin-top: 20px">List Book</h1>
+
+<input  [(ngModel)]="searchText" type="search" class="form-control" placeholder="search" style="width: 40%;margin: 10px auto">
 <!--<p style="display: inline; font-weight: bolder">C {{books.length}} cuốn sách</p>-->
 <a [routerLink]="['/books/create']" class="btn btn-secondary" style="float: right; margin: 10px">Add book</a>
 <table class="table table-bordered" >
@@ -11,7 +13,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let b of books, index as i">
+  <tr *ngFor="let b of books | bookFilter: searchText, index as i">
     <th scope="row">{{i + 1}}</th>
     <td><a [routerLink]="['/books/detail', b.id]">{{b.title}}</a></td>
     <td>{{b.author}}</td>

@@ -37,14 +37,14 @@ export class BookDeleteComponent implements OnInit {
   }
 
   deleteBook(id: number) {
-    if (confirm("Bạn có chắc muốn xoá cuôn sách này không")) {
+    if (confirm("Are you sure")) {
       this.bookService.deleteBook(id).subscribe(
         () => {
-          alert("Xoá thành công!");
+          alert("Done!");
           this.router.navigate(['/books/list']);
         },
         e => {
-          alert("Có lỗi xảy ra. Vui long thử lại!");
+          alert("Error!");
           console.log(e);
         }
 

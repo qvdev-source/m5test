@@ -8,7 +8,7 @@ import {BookService} from "../../service/book.service";
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-
+  searchText:any;
   books: Book[] = [];
   constructor(private bookService: BookService) { }
 

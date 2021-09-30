@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { BookRoutingModule } from './book-routing.module';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookCreateComponent } from './book-create/book-create.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BookUpdateComponent } from './book-update/book-update.component';
 import { BookDeleteComponent } from './book-delete/book-delete.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookFilterPipe } from './book-filter.pipe';
+
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     BookCreateComponent,
     BookUpdateComponent,
     BookDeleteComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    BookFilterPipe
   ],
-  imports: [
-    CommonModule,
-    BookRoutingModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        BookRoutingModule,
+        ReactiveFormsModule,
+        FormsModule
+    ]
 })
 export class BookModule { }

@@ -21,11 +21,11 @@ export class BookCreateComponent implements OnInit {
   createBook() {
     const book = this.bookForm.value;
     this.bookService.saveBook(book).subscribe(() => {
-      alert("Thêm cuốn sách thành công!");
+      alert("Done!");
       this.bookForm.reset();
     },
       e => {
-      alert("Có lỗi xảy ra. Vui lòng thử lại!");
+      alert("Error!");
       console.log(e);
       })
   }
