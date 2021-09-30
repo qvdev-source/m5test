@@ -39,9 +39,9 @@ export class BookUpdateComponent implements OnInit {
   updateBook(id: number) {
     const book = this.bookForm.value;
     this.bookService.updateBook(book, id).subscribe(
-      () => alert("Done"),
+      () => alert("Update"),
       e => {
-        alert("Error!");
+        alert("Eror");
         console.log(e);
       })
   }
